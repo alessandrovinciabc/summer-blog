@@ -1,0 +1,13 @@
+:root {
+  --main: rgb(255, 223, 99);
+  --main-opaque: rgba(255, 223, 99, 0.8);
+}
+
+.bg-main {
+  background-color: var(--main);
+}
+
+.bg-header {
+  background: linear-gradient(var(--main-opaque), var(--main-opaque)),
+    url(assets/bg.jpg) no-repeat 20%;
+}
