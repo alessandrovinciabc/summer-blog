@@ -10,8 +10,12 @@ function PostList(props) {
         posts.length > 0 &&
         posts.map((post) => {
           return (
-            <a className="text-reset" href={`#/post/${post._id}`}>
-              <Card key={post._id} className="post-summary my-3 mx-auto">
+            <a
+              key={post._id}
+              className="text-reset"
+              href={`#/post/${post._id}`}
+            >
+              <Card className="post-summary my-3 mx-auto">
                 <Card.Body>
                   <Card.Title>{post.title}</Card.Title>
                   <Card.Subtitle className="text-muted">
