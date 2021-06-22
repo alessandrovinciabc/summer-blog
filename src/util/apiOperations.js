@@ -13,4 +13,8 @@ async function getComments(postid) {
   return await axios.get(`${apiBase}/${postid}/comment`);
 }
 
-export { getPosts, getComments };
+async function postComment(postid, data) {
+  return await axios.post(`${apiBase}/${postid}/comment`, data);
+}
+
+export { getPosts, getComments, postComment };
