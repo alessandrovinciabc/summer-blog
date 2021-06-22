@@ -18,12 +18,9 @@
     url(assets/bg.jpg) no-repeat 20%;
 }
 
-.end-0 {
-  right: 2px !important;
-}
-
-.bottom-0 {
-  bottom: 2px;
+.comment-time {
+  right: 1.25rem !important;
+  bottom: 2px !important;
 }
 
 .main-navigation > .nav-link {
@@ -46,7 +43,8 @@
   width: 100%;
 }
 
-.post-summary {
+.post-summary,
+.post-link {
   width: 100%;
   max-width: 600px;
 }

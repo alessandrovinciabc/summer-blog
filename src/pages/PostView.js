@@ -62,7 +62,7 @@ function PostView(props) {
                       <Card.Body className="pb-4">
                         <Card.Title>{comment.owner}</Card.Title>
                         {comment.text}
-                        <div className="text-muted position-absolute bottom-0 end-0">
+                        <div className="text-muted position-absolute comment-time">
                           {new Date(comment.createdAt).toLocaleDateString()}
                         </div>
                       </Card.Body>

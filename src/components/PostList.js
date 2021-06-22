@@ -12,7 +12,7 @@ function PostList(props) {
           return (
             <a
               key={post._id}
-              className="text-reset"
+              className="text-reset post-link"
               href={`#/post/${post._id}`}
             >
               <Card className="post-summary my-3 mx-auto">
