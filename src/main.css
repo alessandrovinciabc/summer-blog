@@ -1,6 +1,8 @@
 :root {
   --main: rgb(255, 223, 99);
-  --main-opaque: rgba(255, 223, 99, 0.8);
+  --main-opaque: rgba(255, 223, 99, 0.9);
+  --secondary: rgb(253, 145, 98);
+  --action: rgb(253, 87, 64);
 }
 
 .bg-main {
@@ -10,4 +12,44 @@
 .bg-header {
   background: linear-gradient(var(--main-opaque), var(--main-opaque)),
     url(assets/bg.jpg) no-repeat 20%;
+}
+
+.main-navigation > .nav-link {
+  color: black !important;
+  font-size: 1.4rem;
+}
+
+.main-navigation > .nav-link:hover {
+  opacity: 0.7;
+}
+
+.main-navigation {
+  height: 100%;
+
+  background-color: var(--main);
+  border-radius: 5px;
+}
+
+.post-summary {
+  width: 360px;
+}
+
+/* Injected HTML styles */
+.post {
+  width: 100%;
+  max-width: 633px;
+}
+
+.post iframe {
+  width: 100%;
+  max-width: 580px;
+
+  display: block;
+  margin: 0 auto;
+}
+
+.post figure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

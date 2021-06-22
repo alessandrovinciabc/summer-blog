@@ -5,17 +5,17 @@ import Nav from 'react-bootstrap/Nav';
 
 function Header(props) {
   return (
-    <Navbar className={props.className + ''} variant="dark" expand="md">
+    <Navbar className={props.className + ''} variant="light" expand="md">
       <Navbar.Brand href="#/home">
         <h1>☀⛱Blog</h1>
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="header-navbar" />
       <Navbar.Collapse id="header-navbar">
-        <Nav className="ml-auto">
-          <Nav.Link className="text-light" href="#/home">
+        <Nav className="ml-auto main-navigation">
+          <Nav.Link className="px-3" href="#/home">
             Home
           </Nav.Link>
-          <Nav.Link className="text-light" href="#/about">
+          <Nav.Link className="px-3" href="#/about">
             About
           </Nav.Link>
         </Nav>
