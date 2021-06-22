@@ -32,10 +32,13 @@ function PostView(props) {
   return (
     <Container className="d-flex justify-content-center" fluid>
       {requestedPost && (
-        <div className="post">
+        <div className="post mt-4">
           <h1>{requestedPost.title}</h1>
-          <div dangerouslySetInnerHTML={{ __html: requestedPost.html }}></div>
-          <section className="comments my-5">
+          <div
+            className="post-content"
+            dangerouslySetInnerHTML={{ __html: requestedPost.html }}
+          ></div>
+          <section className="comments my-5 pt-3 border-top">
             <header>
               <h2>Comments</h2>
             </header>

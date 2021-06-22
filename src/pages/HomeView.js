@@ -2,12 +2,17 @@ import React from 'react';
 
 import PostList from '../components/PostList';
 
+import Container from 'react-bootstrap/Container';
+
 function HomeView(props) {
   let { posts } = props;
   return (
-    <>
-      <PostList posts={posts} />
-    </>
+    <Container fluid>
+      <h1 className="text-center mt-3">Home</h1>
+      <div className="posts-container">
+        <PostList posts={posts} />
+      </div>
+    </Container>
   );
 }
 

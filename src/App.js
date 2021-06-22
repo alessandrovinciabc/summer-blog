@@ -7,6 +7,7 @@ import { HashRouter, Switch, Route, Redirect } from 'react-router-dom';
 //Pages
 import PostView from './pages/PostView';
 import HomeView from './pages/HomeView';
+import AboutView from './pages/AboutView';
 
 function App() {
   let [posts, setPosts] = useState([]);
@@ -27,7 +28,7 @@ function App() {
         <Route path="/home" exact>
           <HomeView posts={posts} />
         </Route>
-        <Route path="/about" exact />
+        <Route path="/about" exact component={AboutView} />
         <Route path="/post/:id" exact>
           <PostView posts={posts} />
         </Route>

@@ -21,6 +21,7 @@ function CommentForm(props) {
   let { id } = props;
   return (
     <Form
+      className="border-bottom pb-3"
       onSubmit={(e) => {
         handleSubmit(e, id);
       }}
