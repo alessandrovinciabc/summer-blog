@@ -8,29 +8,12 @@ import { HashRouter, Switch, Route, Redirect } from 'react-router-dom';
 import PostView from './pages/PostView';
 import HomeView from './pages/HomeView';
 
-function sortPosts(a, b) {
-  let dates = {
-    a: new Date(a.createdAt).getTime(),
-    b: new Date(b.createdAt).getTime(),
-  };
-
-  if (dates.a < dates.b) {
-    return 1;
-  } else if (dates.a > dates.b) {
-    return -1;
-  } else if (dates.a === dates.b) {
-    return 0;
-  }
-}
-
 function App() {
   let [posts, setPosts] = useState([]);
 
   useEffect(() => {
     getPosts().then((newPosts) => {
-      let sorted = newPosts.data.sort(sortPosts);
-
-      setPosts(sorted);
+      setPosts(newPosts.data);
     });
   }, []);
 

@@ -9,4 +9,8 @@ async function getPosts() {
   return await axios.get(apiBase);
 }
 
-export { getPosts };
+async function getComments(postid) {
+  return await axios.get(`${apiBase}/${postid}/comment`);
+}
+
+export { getPosts, getComments };
