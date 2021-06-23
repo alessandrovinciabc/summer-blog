@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import { useParams } from 'react-router-dom';
 
+import Loader from '../components/Loader';
 import CommentForm from '../components/CommentForm';
 
 import Card from 'react-bootstrap/Card';
@@ -26,12 +27,12 @@ function PostView(props) {
       });
   }, [id]);
 
-  let { posts } = props;
+  let { posts, loading } = props;
   let requestedPost = posts.find((post) => post._id === id);
 
   return (
     <Container className="d-flex justify-content-center" fluid>
-      {requestedPost && (
+      {requestedPost ? (
         <div className="post mt-4">
           <h1>{requestedPost.title}</h1>
           <p className="text-muted">
@@ -75,6 +76,12 @@ function PostView(props) {
             </div>
           </section>
         </div>
+      ) : loading ? (
+        <div className="mt-4">
+          <Loader />
+        </div>
+      ) : (
+        <div className="mt-4">Post was not found.</div>
       )}
     </Container>
   );

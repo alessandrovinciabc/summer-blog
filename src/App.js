@@ -11,11 +11,16 @@ import AboutView from './pages/AboutView';
 
 function App() {
   let [posts, setPosts] = useState([]);
+  let [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    getPosts().then((newPosts) => {
-      setPosts(newPosts.data);
-    });
+    getPosts()
+      .then((newPosts) => {
+        setPosts(newPosts.data);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
   }, []);
 
   return (
@@ -26,11 +31,11 @@ function App() {
           <Redirect to="/home" />
         </Route>
         <Route path="/home" exact>
-          <HomeView posts={posts} />
+          <HomeView posts={posts} loading={loading} />
         </Route>
         <Route path="/about" exact component={AboutView} />
         <Route path="/post/:id" exact>
-          <PostView posts={posts} />
+          <PostView posts={posts} loading={loading} />
         </Route>
       </Switch>
     </HashRouter>
