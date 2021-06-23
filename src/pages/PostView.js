@@ -34,6 +34,9 @@ function PostView(props) {
       {requestedPost && (
         <div className="post mt-4">
           <h1>{requestedPost.title}</h1>
+          <p className="text-muted">
+            {new Date(requestedPost.createdAt).toLocaleDateString()}
+          </p>
           <div
             className="post-content"
             dangerouslySetInnerHTML={{ __html: requestedPost.html }}
